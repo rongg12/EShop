@@ -19,7 +19,7 @@
         tools:ignore="Overdraw">
 
         <TextView
-            android:id="@id/standard_toolbar_title"
+            android:id="@+id/standard_toolbar_title"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"

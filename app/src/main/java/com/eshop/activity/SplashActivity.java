@@ -13,17 +13,14 @@ import butterknife.ButterKnife;
 /**
  *  Splash 页面：图片播放2秒的渐变动画(透明度变化)之后，跳转到主页面
  */
-public class SplashActivity extends AppCompatActivity implements Animator.AnimatorListener {
+public class SplashActivity extends BaseActivity implements Animator.AnimatorListener {
     @BindView(R.id.image_splash)
     ImageView mIvSplash;
+    //视图填充
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
-        ButterKnife.bind(this);
-        initView();
+    protected int getContentViewLayout() {
+        return R.layout.activity_splash;
     }
-
     /**
      * 初始化
      */
@@ -43,6 +40,7 @@ public class SplashActivity extends AppCompatActivity implements Animator.Animat
                  .setListener(this)  //设置动画的监听
                  .start();    //开始动画
     }
+
 
     /**
      * 动画开始的时候触发

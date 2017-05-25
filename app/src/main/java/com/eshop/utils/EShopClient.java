@@ -1,6 +1,8 @@
 package com.eshop.utils;
 
 
+import android.provider.SyncStateContract;
+
 import okhttp3.Call;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -35,6 +37,18 @@ public class EShopClient {
     public Call getCategory(){
         Request request=new Request.Builder().get()
                 .url(Costants.CATEGORY_URL).build();
+        return mOkHttpClient.newCall(request);
+    }
+    //首页轮播图和促销商品
+    public Call getHomeBanner(){
+        Request request=new Request.Builder().get()
+                .url(Costants.HOME_DATA_URL).build();
+        return mOkHttpClient.newCall(request);
+    }
+    //首页，分类和推荐商品
+    public Call getHomeCatagory(){
+        Request request=new Request.Builder().get()
+                .url(Costants.HOME_CATEGORY_URL).build();
         return mOkHttpClient.newCall(request);
     }
 }
